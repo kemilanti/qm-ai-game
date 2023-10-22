@@ -1,4 +1,5 @@
 ﻿ using UnityEngine;
+ using Input = UnityEngine.Windows.Input;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -159,6 +160,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Attack();
         }
 
         private void LateUpdate()
@@ -209,6 +211,14 @@ namespace StarterAssets
             // Cinemachine will follow this target
             CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
                 _cinemachineTargetYaw, 0.0f);
+        }
+
+        private void Attack()
+        {
+            if (UnityEngine.Input.GetMouseButtonDown(0))
+            {
+                GetComponent<Animator>().SetTrigger("Attack");
+            }
         }
 
         private void Move()
