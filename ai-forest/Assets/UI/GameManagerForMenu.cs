@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManagerForMenu : MonoBehaviour
 {
     public GameObject pauseMenu; // 暂停菜单的Canvas GameObject
     public Button resumeButton; // “继续”按钮
