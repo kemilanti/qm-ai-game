@@ -967,15 +967,15 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 756ca032-c4b2-4092-84c4-4350933f2701
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: ai-forest
+  organizationId: iminimi3cell
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage:
     fileID: 0
   virtualTexturingSupportEnabled: 0
   insecureHttpOption: 0
-  genesisOrgId: 
+  genesisOrgId: '5772943857838'
