@@ -37,7 +37,7 @@ public class DamageDealer : MonoBehaviour
         if (canDealDamage)
         {
             RaycastHit hit;  
-            int layerMask = 1;  
+            int layerMask = 4;  
             if (Physics.Raycast(transform.position, -transform.up, out hit, weaponLength, layerMask))
             {
                 if (!hasDealtDamage.Contains(hit.transform.gameObject))

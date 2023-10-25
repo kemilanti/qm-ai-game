@@ -15,6 +15,32 @@ namespace StarterAssets
 #endif
     public class ThirdPersonController : MonoBehaviour
     {
+        public DamageDealer damageDealer;
+        
+        public void EndDealDamage()
+        {
+            if (damageDealer != null)
+            {
+                damageDealer.EndDealDamage();
+            }
+            else
+            {
+                Debug.LogError("DamageDealer reference not set or found.");
+            }
+        }
+        public void StartDealDamage()
+        {
+            if (damageDealer != null)
+            {
+                damageDealer.StartDealDamage();
+            }
+            else
+            {
+                Debug.LogError("DamageDealer reference not set or found.");
+            }
+        }// fight system
+        
+        
         /*-------------new code */
 
         static public bool dialogue = false;
@@ -139,6 +165,16 @@ namespace StarterAssets
 
         private void Start()
         {
+            GameObject weaponObject = GameObject.Find("DamageDealer");
+            if (weaponObject != null)
+            {
+                damageDealer = weaponObject.GetComponent<DamageDealer>();
+            }
+            else
+            {
+                Debug.LogError("Weapon object not found.");
+            }
+            
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
             
             _hasAnimator = TryGetComponent(out _animator);
