@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
 using TMPro;
-public class playerDetection : MonoBehaviour
+public class npcsys : MonoBehaviour
 {
     public GameObject d_template;
     public GameObject canvas;
