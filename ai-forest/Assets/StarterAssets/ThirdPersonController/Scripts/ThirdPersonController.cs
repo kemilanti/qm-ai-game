@@ -202,7 +202,6 @@ namespace StarterAssets
                 Move();
                 Attack();
             }
-            
         }
 
         private void LateUpdate()
