@@ -26,14 +26,14 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
-        BarFiller();
+        // BarFiller();
     }
 
-    private void BarFiller()
-    {
-        // 使用 Mathf.Lerp 平滑地更新血条值
-        Bar.fillAmount = Mathf.Lerp(Bar.fillAmount, Health / maxHealth, lerpSpeed * Time.deltaTime);
-    }
+    // private void BarFiller()
+    // {
+    //     // 使用 Mathf.Lerp 平滑地更新血条值
+    //     Bar.fillAmount = Mathf.Lerp(Bar.fillAmount, Health / maxHealth, lerpSpeed * Time.deltaTime);
+    // }
 
     public void AddHealth()
     {
