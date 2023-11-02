@@ -5,8 +5,8 @@ public class HealthBar : MonoBehaviour
 {
     public Image Bar;
     public float maxHealth = 100;
-    public float healthChangeAmount = 10f; // 血量变化值，可以根据需要配置
-    public float lerpSpeed = 3;            // 血条平滑变化的速度
+    public float healthChangeAmount = 10f; // Blood change value, configurable as required
+    public float lerpSpeed = 3;            // Speed of smooth change in blood bars
 
     private float _health;
     public float Health
@@ -14,8 +14,8 @@ public class HealthBar : MonoBehaviour
         get { return _health; }
         set
         {
-            _health = Mathf.Clamp(value, 0, maxHealth); // 确保血量在 0 和 maxHealth 之间
-            // 注意：我们不再直接在这里调用 BarFiller()
+            _health = Mathf.Clamp(value, 0, maxHealth); // Make sure the blood level is between 0 and maxHealth.
+            // Note: We no longer call BarFiller() directly here.
         }
     }
 
@@ -29,11 +29,19 @@ public class HealthBar : MonoBehaviour
         // BarFiller();
     }
 
+<<<<<<< Updated upstream
     // private void BarFiller()
     // {
     //     // 使用 Mathf.Lerp 平滑地更新血条值
     //     Bar.fillAmount = Mathf.Lerp(Bar.fillAmount, Health / maxHealth, lerpSpeed * Time.deltaTime);
     // }
+=======
+    private void BarFiller()
+    {
+        // Smoothly update blood bar values using Mathf.Lerp
+        Bar.fillAmount = Mathf.Lerp(Bar.fillAmount, Health / maxHealth, lerpSpeed * Time.deltaTime);
+    }
+>>>>>>> Stashed changes
 
     public void AddHealth()
     {
