@@ -18,9 +18,12 @@ public class npcsys : MonoBehaviour
         {
             canvas.SetActive(true);
             ThirdPersonController.dialogue = true;
-            newdialogue("hi");
-            newdialogue("i am bob");
-            newdialogue("how are you");
+            newdialogue("Hi, I'm your game leader. [Click to continue]");
+            newdialogue("I'm gonna teach you the basics of the game now.");
+            newdialogue("Use [W,A,S,D] to move. Of course, how else did you get here?");
+            newdialogue("Press [Space] to jump");
+            newdialogue("Press [left mouse button] to attack");
+            newdialogue("Congratulations! You've mastered all the tricks of this game, now go and try to beat the Boss!");
             canvas.transform.GetChild(1).gameObject.SetActive(true); // use 'transform' to access GetChild
 
         }
