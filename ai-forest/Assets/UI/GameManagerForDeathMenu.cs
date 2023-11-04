@@ -4,34 +4,28 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerForDeathMenu : MonoBehaviour
 {
+    public GameObject deathUI; // Assume this is your death UI panel
     public Button restartButton;
     public Button quitButton;
 
     private void OnEnable()
     {
-        Invoke("EnableCursor", 0.1f);
-    }
-
-    private void EnableCursor()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        // 
+        GameManagerForMenu.Instance.ShowCursor();
+        GameManagerForMenu.Instance.PauseGame();
     }
 
     private void OnDisable()
     {
-        Invoke("DisableCursor", 0.1f);
-    }
-    private void DisableCursor()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.None;
+        // 
+        GameManagerForMenu.Instance.HideCursor();
+        GameManagerForMenu.Instance.ResumeGame();
     }
 
     void Start()
     {
         // Ensure the death menu is not active when the game starts
-        gameObject.SetActive(false);
+        deathUI.SetActive(false);
 
         // Attach RestartGame method to the restart button's onClick event
         restartButton.onClick.AddListener(RestartGame);
@@ -40,9 +34,8 @@ public class GameManagerForDeathMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        Debug.Log("Restart button clicked"); // This line is for debugging purposes
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f; // Ensure the game's time scale is reset before reloading
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reloads the current scene
     }
 
     void QuitGame()
