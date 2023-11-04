@@ -11,7 +11,7 @@ public class bagsys : MonoBehaviour
 
     public Transform BagParent;
     public Grids grid;
-    public int gridAmount = 39;
+    public int gridAmount = 3;
     public List<ItemType> IAP=new List<ItemType>();//Item has been placed in bag//
     public List<int> IP = new List<int>();//item place in bag//
     public List<Grids> AllGrids = new List<Grids>();
