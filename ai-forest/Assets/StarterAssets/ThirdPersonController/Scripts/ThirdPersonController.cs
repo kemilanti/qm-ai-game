@@ -16,9 +16,9 @@ namespace StarterAssets
     public class ThirdPersonController : MonoBehaviour
     {
         public GameObject deathUI;
-        public float deathHeight = -10f;
+        public float deathHeight = -30f;
         public DamageDealer damageDealer;
-        
+        public static bool death=false;
         public void EndDealDamage()
         {
             if (damageDealer != null)
@@ -167,8 +167,9 @@ namespace StarterAssets
 
         private void Start()
         {
-            deathUI.SetActive(false);
-            GameObject weaponObject = GameObject.Find("DamageDealer");
+
+        death = false;
+        GameObject weaponObject = GameObject.Find("DamageDealer");
             if (weaponObject != null)
             {
                 damageDealer = weaponObject.GetComponent<DamageDealer>();
@@ -208,12 +209,12 @@ namespace StarterAssets
             if (transform.position.y <= deathHeight)
             {
                 Die();
+                death = true;
             }
         }
         void Die()
         {
-            //
-            deathUI.SetActive(true);
+            //deathUI.SetActive(true);
             
         }
 

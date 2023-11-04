@@ -1,24 +1,32 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using StarterAssets;
 
 public class GameManagerForMenu : MonoBehaviour
 {
+    public GameObject deathUI;
+    public Button restartButton;
+    public Button quitButtonOnDeath;
+
     public GameObject bag;
     public GameObject pauseMenu; 
     public Button resumeButton; // 
     public Button quitButton; // 
 
     private bool isPaused = false;
-    public static GameManagerForMenu Instance { get; private set; }
 
 
     void Start()
     {
-        // 初始化设置
         pauseMenu.SetActive(false);
+        deathUI.SetActive(false);
+
         resumeButton.onClick.AddListener(ResumeGame);
         quitButton.onClick.AddListener(QuitGame);
+        restartButton.onClick.AddListener(restartGame);
+        quitButtonOnDeath.onClick.AddListener(QuitGame);
+
     }
 
     void Update()
@@ -47,47 +55,30 @@ public class GameManagerForMenu : MonoBehaviour
                 closeBag();
             }
         }
-    }
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); 
-        }
-        else
-        {
-            Destroy(gameObject);
+        if (ThirdPersonController.death ==true) {
+            openDeathUI();
         }
     }
-
-    public void ShowCursor()
+    void openDeathUI()
     {
+        isPaused = true;
+        deathUI.SetActive(true);
+        Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
-
-
-    public void HideCursor()
+    void restartGame()
     {
-        Cursor.visible = false;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        string sceneName = SceneManager.GetActiveScene().name;// get scene name
+        SceneManager.LoadScene(sceneName);
+        deathUI.SetActive(false);
+        Time.timeScale = 1;
+        
+        ThirdPersonController.death = false;
+        isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-
-    public void PauseGame()
-    {
-        Time.timeScale = 0;
-        ShowCursor();
-    }
-
-    public void ResumeGame()
-    {
-        Time.timeScale = 1;
-        HideCursor();
-    }
-
-
 
     void openBag()
     {
@@ -106,7 +97,22 @@ public class GameManagerForMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         
     }
-    
+    void PauseGame()
+    {
+        isPaused = true;
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    void ResumeGame()
+    {
+        isPaused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     void QuitGame()
     {
