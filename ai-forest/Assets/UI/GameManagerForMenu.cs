@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerForMenu : MonoBehaviour
 {
-    public GameObject pauseMenu; // 暂停菜单的Canvas GameObject
-    public Button resumeButton; // “继续”按钮
-    public Button quitButton; // “退出”按钮
+    public GameObject bag;
+    public GameObject pauseMenu; 
+    public Button resumeButton; // 
+    public Button quitButton; // 
 
     private bool isPaused = false;
 
@@ -20,7 +21,7 @@ public class GameManagerForMenu : MonoBehaviour
 
     void Update()
     {
-        // 监听“ESC”键
+        // ESC
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -32,8 +33,36 @@ public class GameManagerForMenu : MonoBehaviour
                 PauseGame();
             }
         }
+        // open bag
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (!isPaused)
+            {
+                openBag();
+            }
+            else
+            {
+                closeBag();
+            }
+        }
     }
-
+    void openBag()
+    {
+        isPaused = true;
+        bag.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    void closeBag()
+    {
+        isPaused = false;
+        bag.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        
+    }
     void PauseGame()
     {
         isPaused = true;
