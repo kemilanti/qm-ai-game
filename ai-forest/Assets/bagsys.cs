@@ -36,13 +36,6 @@ public class bagsys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit ray;
-        if(Physics.Raycast(currentPosition.ScreenPointToRay(Input.mousePosition),out ray))
-        {
-            if(ray.collider.GetComponent<randomitem>())
-            {
-                Destroy(ray.collider.GetComponent<randomitem>());
-            }
-        }
+ 
     }
 }
