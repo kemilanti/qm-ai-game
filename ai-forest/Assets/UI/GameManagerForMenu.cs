@@ -72,9 +72,9 @@ public class GameManagerForMenu : MonoBehaviour
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         string sceneName = SceneManager.GetActiveScene().name;// get scene name
         SceneManager.LoadScene(sceneName);
-        deathUI.SetActive(false);
-        Time.timeScale = 1;
         
+        Time.timeScale = 1;
+        deathUI.SetActive(false);
         ThirdPersonController.death = false;
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
