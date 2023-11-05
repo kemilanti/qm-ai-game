@@ -2783,7 +2783,7 @@ MonoBehaviour:
   currentPosition: {fileID: 0}
   BagParent: {fileID: 50916702}
   grid: {fileID: 510695307}
-  gridAmount: 39
+  gridAmount: 0
   IAP: 
   IP: 
   AllGrids: []
