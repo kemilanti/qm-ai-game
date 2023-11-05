@@ -9,9 +9,11 @@ public class bagsys : MonoBehaviour
         none = 0, helmet,aromor,gloves,boots,weapons,shield,misc,rings
     }
 
+    public Camera currentPosition;
+
     public Transform BagParent;
     public Grids grid;
-    public int gridAmount = 3;
+    public int gridAmount = 39;
     public List<ItemType> IAP=new List<ItemType>();//Item has been placed in bag//
     public List<int> IP = new List<int>();//item place in bag//
     public List<Grids> AllGrids = new List<Grids>();
@@ -34,6 +36,6 @@ public class bagsys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+ 
     }
 }
