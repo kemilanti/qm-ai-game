@@ -21,6 +21,7 @@ public class npcsys : MonoBehaviour
             newdialogue("Hi, I'm your game leader. [Click to continue]");
             newdialogue("I'm gonna teach you the basics of the game now.");
             newdialogue("Use [W,A,S,D] to move. Of course, how else did you get here?");
+            newdialogue("Press [Shift] to Run");
             newdialogue("Press [Space] to jump");
             newdialogue("Press [B] to open your bag");
             newdialogue("Press [left mouse button] to attack");
