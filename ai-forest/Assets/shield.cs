@@ -22,8 +22,6 @@ public class shield : MonoBehaviour
     {
         if(col.gameObject.tag == "Player")
         {
-            col.gameObject.SendMessage("itemPickup");
-
             Destroy(gameObject);
         }
     }
