@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 127222129}
   - component: {fileID: 127222128}
   m_Layer: 0
-  m_Name: Sphere (2)
+  m_Name: island4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2690,37 +2690,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558467531}
   m_CullTransparentMesh: 1
---- !u!1 &561371813
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 561371814}
-  m_Layer: 0
-  m_Name: lake
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &561371814
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561371813}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 492.64, y: 18.118, z: 523.28}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &575255126
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,7 +3828,7 @@ GameObject:
   - component: {fileID: 1007052125}
   - component: {fileID: 1007052127}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: island1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6413,7 +6382,7 @@ GameObject:
   - component: {fileID: 1824104742}
   - component: {fileID: 1824104741}
   m_Layer: 0
-  m_Name: Sphere (3)
+  m_Name: island5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6728,7 +6697,7 @@ GameObject:
   - component: {fileID: 1975343074}
   - component: {fileID: 1975343076}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: island2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8336,7 +8305,6 @@ SceneRoots:
   - {fileID: 1752212662}
   - {fileID: 2119775931250830950}
   - {fileID: 93085297}
-  - {fileID: 561371814}
   - {fileID: 581793932}
   - {fileID: 1045764303}
   - {fileID: 1841832011}
