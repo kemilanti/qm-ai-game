@@ -169,9 +169,7 @@ namespace StarterAssets
         {
 
         death = false;
-        dialogue = false;
-
-            GameObject weaponObject = GameObject.Find("DamageDealer");
+        GameObject weaponObject = GameObject.Find("DamageDealer");
             if (weaponObject != null)
             {
                 damageDealer = weaponObject.GetComponent<DamageDealer>();
